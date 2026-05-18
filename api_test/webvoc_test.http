@@ -1,0 +1,18 @@
+@server_url = {{$dotenv WEBVOC_SERVER}}
+@server_port = {{$dotenv WEBVOC_PORT}}
+@apiKey = {{$dotenv WEBVOC_API_KEY}}
+
+### Health Check
+GET {{server_url}}:{{server_port}}/health
+
+
+### Get Web Vocabulary (root)
+GET {{server_url}}:{{server_port}}/voc/
+Accept: application/ld+json
+X-API-Key: {{apiKey}}
+
+
+### Get a specific vocabulary term
+GET {{server_url}}:{{server_port}}/voc/Product
+Accept: application/ld+json
+X-API-Key: {{apiKey}}

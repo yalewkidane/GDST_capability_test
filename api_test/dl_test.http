@@ -1,0 +1,39 @@
+@server_url = {{$dotenv DL_SERVER}}
+@server_port = {{$dotenv DL_PORT}}
+@apiKey = {{$dotenv DL_API_KEY}}
+
+@keyType = 01
+@linkTypeValue = gs1:masterData
+@idValue = urn:epc:id:sscc:08600031303.0003
+
+### Health Check
+GET {{server_url}}:{{server_port}}/health
+
+
+### Create Digital Links (Bulk Format)
+POST {{server_url}}:{{server_port}}/digitallink/new
+Content-Type: application/json
+X-API-Key: {{apiKey}}
+
+{
+  "anchor": "/417/8800026900078",
+  "itemDescription": "Oliot dl resolver for dl",
+  "defaultLinktype": "gs1:epcis",
+  "links": [
+    {
+      "linktype": "gs1:epcis",
+      "href": "http://210.113.134.235:24242/epcis/v2",
+      "title": "Oliot EPCIS Server",
+      "type": "application/json",
+      "hreflang": [
+        "en"
+      ]
+    }
+  ]
+}
+
+
+### Resolve Digital Link
+GET {{server_url}}:{{server_port}}/digitallink/417/8800026900078?linkType=gs1:epcis
+Accept: application/json
+X-API-Key: {{apiKey}}

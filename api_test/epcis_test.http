@@ -1,0 +1,45 @@
+@server_url = {{$dotenv EPCIS_SERVER}}
+@server_port = {{$dotenv EPCIS_PORT}}
+@apiKey = {{$dotenv EPCIS_API_KEY}}
+
+### Health Check
+GET {{server_url}}:{{server_port}}/health
+
+
+### Capability - top level
+GET {{server_url}}:{{server_port}}/epcis/v2
+Accept: application/json
+X-API-Key: {{apiKey}}
+
+
+### Query events
+GET {{server_url}}:{{server_port}}/epcis/v2/events
+Accept: application/json
+X-API-Key: {{apiKey}}
+
+
+### Capture an EPCIS event
+POST {{server_url}}:{{server_port}}/epcis/v2/capture
+Content-Type: application/json
+X-API-Key: {{apiKey}}
+
+{
+  "@context": ["https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld"],
+  "type": "EPCISDocument",
+  "schemaVersion": "2.0",
+  "creationDate": "2026-05-18T00:00:00.000Z",
+  "epcisBody": {
+    "eventList": [
+      {
+        "type": "ObjectEvent",
+        "eventTime": "2026-05-18T00:00:00.000Z",
+        "eventTimeZoneOffset": "+09:00",
+        "epcList": ["urn:epc:id:sscc:08600031303.0003"],
+        "action": "OBSERVE",
+        "bizStep": "https://ref.gs1.org/cbv/BizStep-receiving",
+        "disposition": "https://ref.gs1.org/cbv/Disp-in_progress",
+        "readPoint": { "id": "urn:epc:id:sgln:0614141.07346.1234" }
+      }
+    ]
+  }
+}
