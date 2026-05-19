@@ -1,27 +1,29 @@
-@server_url = {{$dotenv EPCIS_SERVER}}
-@server_port = {{$dotenv EPCIS_PORT}}
-@apiKey = {{$dotenv EPCIS_API_KEY}}
+@epcis_server_url = {{$dotenv EPCIS_SERVER}}
+@epcis_server_port = {{$dotenv EPCIS_PORT}}
+@epcis_apiKey = {{$dotenv EPCIS_API_KEY}}
 
 ### Health Check
-GET {{server_url}}:{{server_port}}/health
+GET {{epcis_server_url}}:{{epcis_server_port}}/health
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
 
 
 ### Capability - top level
-GET {{server_url}}:{{server_port}}/epcis/v2
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2
 Accept: application/json
-X-API-Key: {{apiKey}}
+X-API-Key: {{epcis_apiKey}}
 
 
 ### Query events
-GET {{server_url}}:{{server_port}}/epcis/v2/events
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events
 Accept: application/json
-X-API-Key: {{apiKey}}
+X-API-Key: {{epcis_apiKey}}
 
 
 ### Capture an EPCIS event
-POST {{server_url}}:{{server_port}}/epcis/v2/capture
+POST {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/capture
 Content-Type: application/json
-X-API-Key: {{apiKey}}
+X-API-Key: {{epcis_apiKey}}
 
 {
   "@context": ["https://ref.gs1.org/standards/epcis/2.0.0/epcis-context.jsonld"],

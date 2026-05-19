@@ -1,0 +1,21 @@
+{
+  "name": "gdst-capability-test",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Per-step automation for the GDST Capability Test against capability-service.traceability-dialogue.org",
+  "type": "commonjs",
+  "bin": {
+    "gdst": "src/cli.js"
+  },
+  "scripts": {
+    "cli": "node src/cli.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

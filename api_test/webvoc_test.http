@@ -1,18 +1,41 @@
-@server_url = {{$dotenv WEBVOC_SERVER}}
-@server_port = {{$dotenv WEBVOC_PORT}}
-@apiKey = {{$dotenv WEBVOC_API_KEY}}
+@webvoc_server_url = {{$dotenv WEBVOC_SERVER}}
+@webvoc_server_port = {{$dotenv WEBVOC_PORT}}
+@webvoc_apiKey = {{$dotenv WEBVOC_API_KEY}}
+
+@Gukje_Feedmill_party=urn:gdst:example.org:party:8800037.2000002
 
 ### Health Check
-GET {{server_url}}:{{server_port}}/health
+GET {{webvoc_server_url}}:{{webvoc_server_port}}/health
 
 
-### Get Web Vocabulary (root)
-GET {{server_url}}:{{server_port}}/voc/
+
+### -----------------------------------------------------------------------------------------------------------------------------------Product Definitions 
+
+//@vegetables_product=urn:gdst:traceability-solution.com:product:class:88000197.2000002
+@vegetables_product=urn:gdst:example.org:product:class:88000197.2000002
+POST {{webvoc_server_url}}:{{webvoc_server_port}}/gs1webvoc/capture
+Content-Type: application/ld+json
+X-API-Key: {{webvoc_apiKey}}
+
+{
+  "@context": {
+    "cbvmda": "urn:epcglobal:cbvmda:mda",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "gs1": "http://gs1.org/voc/",
+    "@vocab": "http://gs1.org/voc/",
+    "gdst": "https://traceability-dialogue.org/vocab/"
+  },
+  "@type": "gs1:Product",
+  "gtin": "{{vegetables_product}}",
+  "productName": [
+    { "@language": "en-US", "@value": "vegetables" }
+  ],
+  "cbvmda:tradeItemConditionCode": "WHL",
+  "cbvmda:owning_party": "{{Gukje_Feedmill_party}}",
+  "cbvmda:informationProvider": "{{Gukje_Feedmill_party}}"
+}
+
+### Gukje Feedworks Ltd Organization Lookup
+GET {{webvoc_server_url}}:{{webvoc_server_port}}/gs1webvoc/01/{{vegetables_product}}
 Accept: application/ld+json
-X-API-Key: {{apiKey}}
-
-
-### Get a specific vocabulary term
-GET {{server_url}}:{{server_port}}/voc/Product
-Accept: application/ld+json
-X-API-Key: {{apiKey}}
+X-API-Key: {{webvoc_apiKey}}

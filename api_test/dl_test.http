@@ -1,19 +1,27 @@
-@server_url = {{$dotenv DL_SERVER}}
-@server_port = {{$dotenv DL_PORT}}
-@apiKey = {{$dotenv DL_API_KEY}}
+@dl_server_url = {{$dotenv DL_SERVER}}
+@dl_server_port = {{$dotenv DL_PORT}}
+@dl_apiKey = {{$dotenv DL_API_KEY}}
+
+@epcis_server_url = {{$dotenv EPCIS_SERVER}}
+@epcis_server_port = {{$dotenv EPCIS_PORT}}
+@epcis_apiKey = {{$dotenv EPCIS_API_KEY}}
+
+@webvoc_server_url = {{$dotenv WEBVOC_SERVER}}
+@webvoc_server_port = {{$dotenv WEBVOC_PORT}}
+@webvoc_apiKey = {{$dotenv WEBVOC_API_KEY}}
 
 @keyType = 01
 @linkTypeValue = gs1:masterData
 @idValue = urn:epc:id:sscc:08600031303.0003
 
 ### Health Check
-GET {{server_url}}:{{server_port}}/health
+GET {{dl_server_url}}:{{dl_server_port}}/health
 
 
 ### Create Digital Links (Bulk Format)
-POST {{server_url}}:{{server_port}}/digitallink/new
+POST {{dl_server_url}}:{{dl_server_port}}/digitallink/new
 Content-Type: application/json
-X-API-Key: {{apiKey}}
+X-API-Key: {{dl_apiKey}}
 
 {
   "anchor": "/417/8800026900078",
@@ -22,7 +30,7 @@ X-API-Key: {{apiKey}}
   "links": [
     {
       "linktype": "gs1:epcis",
-      "href": "http://210.113.134.235:24242/epcis/v2",
+      "href": "http://{{epcis_server_url}}:{{epcis_server_port}}/epcis/v2",
       "title": "Oliot EPCIS Server",
       "type": "application/json",
       "hreflang": [
@@ -34,6 +42,11 @@ X-API-Key: {{apiKey}}
 
 
 ### Resolve Digital Link
-GET {{server_url}}:{{server_port}}/digitallink/417/8800026900078?linkType=gs1:epcis
+GET {{dl_server_url}}:{{dl_server_port}}/digitallink/417/8800026900078?linkType=gs1:epcis
 Accept: application/json
-X-API-Key: {{apiKey}}
+X-API-Key: {{dl_apiKey}}
+
+### Delete Digital Link
+DELETE  {{dl_server_url}}:{{dl_server_port}}/digitallink/417/8800026900078?linkType=gs1:epcis
+Accept: application/json
+X-API-Key: {{dl_apiKey}}

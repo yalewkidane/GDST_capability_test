@@ -1,0 +1,393 @@
+[
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Product",
+    "gtin": "{{products.vegetables}}",
+    "productName": [
+      { "@language": "en-US", "@value": "vegetables" }
+    ],
+    "cbvmda:tradeItemConditionCode": "WHL",
+    "cbvmda:owning_party": "{{parties.Gukje_Feedmill}}",
+    "cbvmda:informationProvider": "{{parties.Gukje_Feedmill}}"
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Product",
+    "gtin": "{{products.soy}}",
+    "productName": [
+      { "@language": "en-US", "@value": "Soy-based Salmon Feed" }
+    ],
+    "cbvmda:tradeItemConditionCode": "WHL",
+    "cbvmda:owning_party": "{{parties.Gukje_Feedmill}}",
+    "cbvmda:informationProvider": "{{parties.Gukje_Feedmill}}"
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Product",
+    "gtin": "{{products.Atlantic_Salmon_Fry}}",
+    "productName": [
+      { "@language": "en-US", "@value": "Atlantic Salmon Fry" }
+    ],
+    "cbvmda:fishSeafoodPresentationCode": "FIL",
+    "cbvmda:tradeItemConditionCode": "WHL",
+    "cbvmda:owning_party": "{{parties.haeundae_farm}}",
+    "cbvmda:informationProvider": "{{parties.haeundae_farm}}",
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Salmo salar"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["SAL"]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Product",
+    "gtin": "{{products.Atlantic_Salmon}}",
+    "productName": [
+      { "@language": "en-US", "@value": "Atlantic Salmon" }
+    ],
+    "cbvmda:fishSeafoodPresentationCode": "WHL",
+    "cbvmda:tradeItemConditionCode": "OTH",
+    "cbvmda:owning_party": "{{parties.jagalchi_tidal_processing}}",
+    "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Salmo salar"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["SAL"]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Product",
+    "gtin": "{{products.Canned_Atlantic_Salmon}}",
+    "productName": [
+      { "@language": "en-US", "@value": "Canned Atlantic Salmon" }
+    ],
+    "cbvmda:fishSeafoodPresentationCode": "WHL",
+    "cbvmda:tradeItemConditionCode": "OTH",
+    "cbvmda:owning_party": "{{parties.jagalchi_tidal_processing}}",
+    "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Salmo salar"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["SAL"]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Product",
+    "gtin": "{{products.Tuna}}",
+    "productName": [
+      { "@language": "en-US", "@value": "Tuna" }
+    ],
+    "cbvmda:fishSeafoodPresentationCode": "WHL",
+    "cbvmda:tradeItemConditionCode": "OTH",
+    "cbvmda:owning_party": "{{parties.blue_vessel_operator}}",
+    "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Thunnus albacares"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["TUN"]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Organization",
+    "globalLocationNumber": "{{parties.Gukje_Feedmill}}",
+    "cbvmda:informationProvider": "{{parties.Gukje_Feedmill}}",
+    "organizationName": [
+      { "@language": "en-US", "@value": "Gukje Feedworks Ltd." }
+    ]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Organization",
+    "globalLocationNumber": "{{parties.haeundae_farm}}",
+    "cbvmda:informationProvider": "{{parties.haeundae_farm}}",
+    "organizationName": [
+      { "@language": "en-US", "@value": "Haeundae Hatch & Nursery Co." }
+    ]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Organization",
+    "globalLocationNumber": "{{parties.jagalchi_tidal_processing}}",
+    "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
+    "organizationName": [
+      { "@language": "en-US", "@value": "Jagalchi Tidal Salmon Farms Co." }
+    ]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Organization",
+    "globalLocationNumber": "{{parties.bluewave_retailer}}",
+    "cbvmda:informationProvider": "{{parties.bluewave_retailer}}",
+    "organizationName": [
+      { "@language": "en-US", "@value": "BlueWave Marine Processing Co." }
+    ]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Place",
+    "globalLocationNumber": "{{locations.Gukje_Feedmill}}",
+    "cbvmda:owning_party": "{{parties.Gukje_Feedmill}}",
+    "cbvmda:informationProvider": "{{parties.Gukje_Feedmill}}",
+    "gs1:physicalLocationName": [
+      { "@language": "en-US", "@value": "Gukje Feedmill" }
+    ],
+    "name": [
+      { "@language": "en-US", "@value": "Gukje Feedmill" }
+    ],
+    "email": "hello@gukjefeed.kr",
+    "address": {
+      "@type": "gs1:PostalAddress",
+      "streetAddress": [
+        { "@language": "en-US", "@value": "45 Gwangbok-ro" }
+      ],
+      "addressLocality": [
+        { "@language": "en-US", "@value": "Jung-gu" }
+      ],
+      "addressRegion": [
+        { "@language": "en-US", "@value": "Busan" }
+      ],
+      "countryCode": "KR"
+    }
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Place",
+    "globalLocationNumber": "{{locations.haeundae_farm}}",
+    "cbvmda:owning_party": "{{parties.haeundae_farm}}",
+    "cbvmda:informationProvider": "{{parties.haeundae_farm}}",
+    "gs1:physicalLocationName": [
+      { "@language": "en-US", "@value": "Haeundae Hatchery" }
+    ],
+    "email": "hatch@haeundae-hatch.kr",
+    "name": [
+      { "@language": "en-US", "@value": "Haeundae Hatchery" }
+    ],
+    "address": {
+      "@type": "gs1:PostalAddress",
+      "streetAddress": [
+        { "@language": "en-US", "@value": "123 Haeundae-ro" }
+      ],
+      "addressLocality": [
+        { "@language": "en-US", "@value": "Haeundae-gu" }
+      ],
+      "addressRegion": [
+        { "@language": "en-US", "@value": "Busan" }
+      ],
+      "countryCode": "KR"
+    }
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Place",
+    "globalLocationNumber": "{{locations.jagalchi_tidal_processing}}",
+    "cbvmda:owning_party": "{{parties.jagalchi_tidal_processing}}",
+    "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
+    "gs1:physicalLocationName": [
+      { "@language": "en-US", "@value": "Jagalchi Tidal Farm" }
+    ],
+    "email": "farm@jagalchi-salmon.kr",
+    "name": [
+      { "@language": "en-US", "@value": "Jagalchi Tidal Farm" }
+    ],
+    "address": {
+      "@type": "gs1:PostalAddress",
+      "streetAddress": [
+        { "@language": "en-US", "@value": "200 Suyeong-ro" }
+      ],
+      "addressLocality": [
+        { "@language": "en-US", "@value": "Suyeong-gu" }
+      ],
+      "addressRegion": [
+        { "@language": "en-US", "@value": "Busan" }
+      ],
+      "countryCode": "KR"
+    }
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Place",
+    "globalLocationNumber": "{{locations.bluewave_retailer}}",
+    "cbvmda:owning_party": "{{parties.bluewave_retailer}}",
+    "cbvmda:informationProvider": "{{parties.bluewave_retailer}}",
+    "gs1:physicalLocationName": [
+      { "@language": "en-US", "@value": "BlueWave Retail" }
+    ],
+    "email": "ops@bluewave.kr",
+    "name": [
+      { "@language": "en-US", "@value": "BlueWave Retail" }
+    ],
+    "address": {
+      "@type": "gs1:PostalAddress",
+      "streetAddress": [
+        { "@language": "en-US", "@value": "77 Jagalchihaean-ro" }
+      ],
+      "addressLocality": [
+        { "@language": "en-US", "@value": "Jung-gu" }
+      ],
+      "addressRegion": [
+        { "@language": "en-US", "@value": "Busan" }
+      ],
+      "countryCode": "KR"
+    }
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Organization",
+    "globalLocationNumber": "{{parties.blue_vessel_operator}}",
+    "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
+    "organizationName": [
+      { "@language": "en-US", "@value": "Blue Vessel Operator Co." }
+    ]
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Place",
+    "globalLocationNumber": "{{locations.blue_vessel_operator_catcharea}}",
+    "cbvmda:owning_party": "{{parties.blue_vessel_operator}}",
+    "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
+    "gs1:physicalLocationName": [
+      { "@language": "en-US", "@value": "Blue Vessel Catch Area" }
+    ],
+    "name": [
+      { "@language": "en-US", "@value": "Blue Vessel Catch Area" }
+    ],
+    "email": "ops@blue-vessel.kr",
+    "cbvmda:vesselID": "KRPUS-FV-0001",
+    "cbvmda:vesselName": "FV Blue Current",
+    "cbvmda:vesselFlagState": "KR",
+    "gdst:imoNumber": "IMO.9876543",
+    "address": {
+      "@type": "gs1:PostalAddress",
+      "streetAddress": [
+        { "@language": "en-US", "@value": "Offshore — East Sea EEZ" }
+      ],
+      "addressLocality": [
+        { "@language": "en-US", "@value": "EEZ KR" }
+      ],
+      "addressRegion": [
+        { "@language": "en-US", "@value": "Busan" }
+      ],
+      "countryCode": "KR"
+    }
+  },
+  {
+    "@context": {
+      "cbvmda": "urn:epcglobal:cbvmda:mda",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "gs1": "http://gs1.org/voc/",
+      "@vocab": "http://gs1.org/voc/",
+      "gdst": "https://traceability-dialogue.org/vocab/"
+    },
+    "@type": "gs1:Place",
+    "globalLocationNumber": "{{locations.blue_vessel_operator_port}}",
+    "cbvmda:owning_party": "{{parties.blue_vessel_operator}}",
+    "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
+    "gs1:physicalLocationName": [
+      { "@language": "en-US", "@value": "Blue Vessel Operator Port" }
+    ],
+    "name": [
+      { "@language": "en-US", "@value": "Blue Vessel Operator Port" }
+    ],
+    "email": "ops@blue-vessel.kr",
+    "address": {
+      "@type": "gs1:PostalAddress",
+      "streetAddress": [
+        { "@language": "en-US", "@value": "1 Busan Fishing Port" }
+      ],
+      "addressLocality": [
+        { "@language": "en-US", "@value": "Yeongdo-gu" }
+      ],
+      "addressRegion": [
+        { "@language": "en-US", "@value": "Busan" }
+      ],
+      "countryCode": "KR"
+    }
+  }
+]
