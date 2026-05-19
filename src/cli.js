@@ -98,6 +98,11 @@ program
   }));
 
 program
+  .command('new-system <profile>')
+  .description('Swap identity: backs up .env / data/identifiers.json / data/master-data.template.json to .v1 siblings, then rewrites them per <profile.json>')
+  .action(wrap((profile) => require('./swap/new-system').run(profile)));
+
+program
   .command('start')
   .description('Step 1: POST capability /process/start; persists UUID and source EPC(s) to .capability-state.json')
   .action(wrap(() => require('./capability/start').run()));

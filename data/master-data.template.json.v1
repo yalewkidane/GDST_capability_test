@@ -10,10 +10,7 @@
     "@type": "gs1:Product",
     "gtin": "{{products.vegetables}}",
     "productName": [
-      {
-        "@language": "en-US",
-        "@value": "vegetables"
-      }
+      { "@language": "en-US", "@value": "vegetables" }
     ],
     "cbvmda:tradeItemConditionCode": "WHL",
     "cbvmda:owning_party": "{{parties.Gukje_Feedmill}}",
@@ -30,10 +27,7 @@
     "@type": "gs1:Product",
     "gtin": "{{products.soy}}",
     "productName": [
-      {
-        "@language": "en-US",
-        "@value": "Soy-based Salmon Feed"
-      }
+      { "@language": "en-US", "@value": "Soy-based Salmon Feed" }
     ],
     "cbvmda:tradeItemConditionCode": "WHL",
     "cbvmda:owning_party": "{{parties.Gukje_Feedmill}}",
@@ -50,21 +44,14 @@
     "@type": "gs1:Product",
     "gtin": "{{products.Atlantic_Salmon_Fry}}",
     "productName": [
-      {
-        "@language": "en-US",
-        "@value": "Atlantic Salmon Fry"
-      }
+      { "@language": "en-US", "@value": "Atlantic Salmon Fry" }
     ],
     "cbvmda:fishSeafoodPresentationCode": "FIL",
     "cbvmda:tradeItemConditionCode": "WHL",
     "cbvmda:owning_party": "{{parties.haeundae_farm}}",
     "cbvmda:informationProvider": "{{parties.haeundae_farm}}",
-    "cbvmda:speciesForFisheryStatisticsPurposesName": [
-      "Salmo salar"
-    ],
-    "cbvmda:speciesForFisheryStatisticsPurposesCode": [
-      "SAL"
-    ]
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Salmo salar"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["SAL"]
   },
   {
     "@context": {
@@ -77,21 +64,14 @@
     "@type": "gs1:Product",
     "gtin": "{{products.Atlantic_Salmon}}",
     "productName": [
-      {
-        "@language": "en-US",
-        "@value": "Atlantic Salmon"
-      }
+      { "@language": "en-US", "@value": "Atlantic Salmon" }
     ],
     "cbvmda:fishSeafoodPresentationCode": "WHL",
     "cbvmda:tradeItemConditionCode": "OTH",
     "cbvmda:owning_party": "{{parties.jagalchi_tidal_processing}}",
     "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
-    "cbvmda:speciesForFisheryStatisticsPurposesName": [
-      "Salmo salar"
-    ],
-    "cbvmda:speciesForFisheryStatisticsPurposesCode": [
-      "SAL"
-    ]
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Salmo salar"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["SAL"]
   },
   {
     "@context": {
@@ -104,21 +84,14 @@
     "@type": "gs1:Product",
     "gtin": "{{products.Canned_Atlantic_Salmon}}",
     "productName": [
-      {
-        "@language": "en-US",
-        "@value": "Canned Atlantic Salmon"
-      }
+      { "@language": "en-US", "@value": "Canned Atlantic Salmon" }
     ],
     "cbvmda:fishSeafoodPresentationCode": "WHL",
     "cbvmda:tradeItemConditionCode": "OTH",
     "cbvmda:owning_party": "{{parties.jagalchi_tidal_processing}}",
     "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
-    "cbvmda:speciesForFisheryStatisticsPurposesName": [
-      "Salmo salar"
-    ],
-    "cbvmda:speciesForFisheryStatisticsPurposesCode": [
-      "SAL"
-    ]
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Salmo salar"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["SAL"]
   },
   {
     "@context": {
@@ -131,21 +104,14 @@
     "@type": "gs1:Product",
     "gtin": "{{products.Tuna}}",
     "productName": [
-      {
-        "@language": "en-US",
-        "@value": "Tuna"
-      }
+      { "@language": "en-US", "@value": "Tuna" }
     ],
     "cbvmda:fishSeafoodPresentationCode": "WHL",
     "cbvmda:tradeItemConditionCode": "OTH",
     "cbvmda:owning_party": "{{parties.blue_vessel_operator}}",
     "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
-    "cbvmda:speciesForFisheryStatisticsPurposesName": [
-      "Thunnus albacares"
-    ],
-    "cbvmda:speciesForFisheryStatisticsPurposesCode": [
-      "TUN"
-    ]
+    "cbvmda:speciesForFisheryStatisticsPurposesName": ["Thunnus albacares"],
+    "cbvmda:speciesForFisheryStatisticsPurposesCode": ["TUN"]
   },
   {
     "@context": {
@@ -159,10 +125,7 @@
     "globalLocationNumber": "{{parties.Gukje_Feedmill}}",
     "cbvmda:informationProvider": "{{parties.Gukje_Feedmill}}",
     "organizationName": [
-      {
-        "@language": "en-US",
-        "@value": "Gukje Feedworks Ltd."
-      }
+      { "@language": "en-US", "@value": "Gukje Feedworks Ltd." }
     ]
   },
   {
@@ -177,10 +140,7 @@
     "globalLocationNumber": "{{parties.haeundae_farm}}",
     "cbvmda:informationProvider": "{{parties.haeundae_farm}}",
     "organizationName": [
-      {
-        "@language": "en-US",
-        "@value": "Haeundae Hatch & Nursery Co."
-      }
+      { "@language": "en-US", "@value": "Haeundae Hatch & Nursery Co." }
     ]
   },
   {
@@ -195,10 +155,7 @@
     "globalLocationNumber": "{{parties.jagalchi_tidal_processing}}",
     "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
     "organizationName": [
-      {
-        "@language": "en-US",
-        "@value": "Jagalchi Tidal Salmon Farms Co."
-      }
+      { "@language": "en-US", "@value": "Jagalchi Tidal Salmon Farms Co." }
     ]
   },
   {
@@ -213,10 +170,7 @@
     "globalLocationNumber": "{{parties.bluewave_retailer}}",
     "cbvmda:informationProvider": "{{parties.bluewave_retailer}}",
     "organizationName": [
-      {
-        "@language": "en-US",
-        "@value": "BlueWave Marine Processing Co."
-      }
+      { "@language": "en-US", "@value": "BlueWave Marine Processing Co." }
     ]
   },
   {
@@ -232,37 +186,22 @@
     "cbvmda:owning_party": "{{parties.Gukje_Feedmill}}",
     "cbvmda:informationProvider": "{{parties.Gukje_Feedmill}}",
     "gs1:physicalLocationName": [
-      {
-        "@language": "en-US",
-        "@value": "Gukje Feedmill"
-      }
+      { "@language": "en-US", "@value": "Gukje Feedmill" }
     ],
     "name": [
-      {
-        "@language": "en-US",
-        "@value": "Gukje Feedmill"
-      }
+      { "@language": "en-US", "@value": "Gukje Feedmill" }
     ],
     "email": "hello@gukjefeed.kr",
     "address": {
       "@type": "gs1:PostalAddress",
       "streetAddress": [
-        {
-          "@language": "en-US",
-          "@value": "45 Gwangbok-ro"
-        }
+        { "@language": "en-US", "@value": "45 Gwangbok-ro" }
       ],
       "addressLocality": [
-        {
-          "@language": "en-US",
-          "@value": "Jung-gu"
-        }
+        { "@language": "en-US", "@value": "Jung-gu" }
       ],
       "addressRegion": [
-        {
-          "@language": "en-US",
-          "@value": "Busan"
-        }
+        { "@language": "en-US", "@value": "Busan" }
       ],
       "countryCode": "KR"
     }
@@ -280,37 +219,22 @@
     "cbvmda:owning_party": "{{parties.haeundae_farm}}",
     "cbvmda:informationProvider": "{{parties.haeundae_farm}}",
     "gs1:physicalLocationName": [
-      {
-        "@language": "en-US",
-        "@value": "Haeundae Hatchery"
-      }
+      { "@language": "en-US", "@value": "Haeundae Hatchery" }
     ],
     "email": "hatch@haeundae-hatch.kr",
     "name": [
-      {
-        "@language": "en-US",
-        "@value": "Haeundae Hatchery"
-      }
+      { "@language": "en-US", "@value": "Haeundae Hatchery" }
     ],
     "address": {
       "@type": "gs1:PostalAddress",
       "streetAddress": [
-        {
-          "@language": "en-US",
-          "@value": "123 Haeundae-ro"
-        }
+        { "@language": "en-US", "@value": "123 Haeundae-ro" }
       ],
       "addressLocality": [
-        {
-          "@language": "en-US",
-          "@value": "Haeundae-gu"
-        }
+        { "@language": "en-US", "@value": "Haeundae-gu" }
       ],
       "addressRegion": [
-        {
-          "@language": "en-US",
-          "@value": "Busan"
-        }
+        { "@language": "en-US", "@value": "Busan" }
       ],
       "countryCode": "KR"
     }
@@ -328,37 +252,22 @@
     "cbvmda:owning_party": "{{parties.jagalchi_tidal_processing}}",
     "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}",
     "gs1:physicalLocationName": [
-      {
-        "@language": "en-US",
-        "@value": "Jagalchi Tidal Farm"
-      }
+      { "@language": "en-US", "@value": "Jagalchi Tidal Farm" }
     ],
     "email": "farm@jagalchi-salmon.kr",
     "name": [
-      {
-        "@language": "en-US",
-        "@value": "Jagalchi Tidal Farm"
-      }
+      { "@language": "en-US", "@value": "Jagalchi Tidal Farm" }
     ],
     "address": {
       "@type": "gs1:PostalAddress",
       "streetAddress": [
-        {
-          "@language": "en-US",
-          "@value": "200 Suyeong-ro"
-        }
+        { "@language": "en-US", "@value": "200 Suyeong-ro" }
       ],
       "addressLocality": [
-        {
-          "@language": "en-US",
-          "@value": "Suyeong-gu"
-        }
+        { "@language": "en-US", "@value": "Suyeong-gu" }
       ],
       "addressRegion": [
-        {
-          "@language": "en-US",
-          "@value": "Busan"
-        }
+        { "@language": "en-US", "@value": "Busan" }
       ],
       "countryCode": "KR"
     }
@@ -376,37 +285,22 @@
     "cbvmda:owning_party": "{{parties.bluewave_retailer}}",
     "cbvmda:informationProvider": "{{parties.bluewave_retailer}}",
     "gs1:physicalLocationName": [
-      {
-        "@language": "en-US",
-        "@value": "BlueWave Retail"
-      }
+      { "@language": "en-US", "@value": "BlueWave Retail" }
     ],
     "email": "ops@bluewave.kr",
     "name": [
-      {
-        "@language": "en-US",
-        "@value": "BlueWave Retail"
-      }
+      { "@language": "en-US", "@value": "BlueWave Retail" }
     ],
     "address": {
       "@type": "gs1:PostalAddress",
       "streetAddress": [
-        {
-          "@language": "en-US",
-          "@value": "77 Jagalchihaean-ro"
-        }
+        { "@language": "en-US", "@value": "77 Jagalchihaean-ro" }
       ],
       "addressLocality": [
-        {
-          "@language": "en-US",
-          "@value": "Jung-gu"
-        }
+        { "@language": "en-US", "@value": "Jung-gu" }
       ],
       "addressRegion": [
-        {
-          "@language": "en-US",
-          "@value": "Busan"
-        }
+        { "@language": "en-US", "@value": "Busan" }
       ],
       "countryCode": "KR"
     }
@@ -423,10 +317,7 @@
     "globalLocationNumber": "{{parties.blue_vessel_operator}}",
     "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
     "organizationName": [
-      {
-        "@language": "en-US",
-        "@value": "Blue Vessel Operator Co."
-      }
+      { "@language": "en-US", "@value": "Blue Vessel Operator Co." }
     ]
   },
   {
@@ -442,16 +333,10 @@
     "cbvmda:owning_party": "{{parties.blue_vessel_operator}}",
     "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
     "gs1:physicalLocationName": [
-      {
-        "@language": "en-US",
-        "@value": "Blue Vessel Catch Area"
-      }
+      { "@language": "en-US", "@value": "Blue Vessel Catch Area" }
     ],
     "name": [
-      {
-        "@language": "en-US",
-        "@value": "Blue Vessel Catch Area"
-      }
+      { "@language": "en-US", "@value": "Blue Vessel Catch Area" }
     ],
     "email": "ops@blue-vessel.kr",
     "cbvmda:vesselID": "KRPUS-FV-0001",
@@ -461,22 +346,13 @@
     "address": {
       "@type": "gs1:PostalAddress",
       "streetAddress": [
-        {
-          "@language": "en-US",
-          "@value": "Offshore — East Sea EEZ"
-        }
+        { "@language": "en-US", "@value": "Offshore — East Sea EEZ" }
       ],
       "addressLocality": [
-        {
-          "@language": "en-US",
-          "@value": "EEZ KR"
-        }
+        { "@language": "en-US", "@value": "EEZ KR" }
       ],
       "addressRegion": [
-        {
-          "@language": "en-US",
-          "@value": "Busan"
-        }
+        { "@language": "en-US", "@value": "Busan" }
       ],
       "countryCode": "KR"
     }
@@ -494,37 +370,22 @@
     "cbvmda:owning_party": "{{parties.blue_vessel_operator}}",
     "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}",
     "gs1:physicalLocationName": [
-      {
-        "@language": "en-US",
-        "@value": "Blue Vessel Operator Port"
-      }
+      { "@language": "en-US", "@value": "Blue Vessel Operator Port" }
     ],
     "name": [
-      {
-        "@language": "en-US",
-        "@value": "Blue Vessel Operator Port"
-      }
+      { "@language": "en-US", "@value": "Blue Vessel Operator Port" }
     ],
     "email": "ops@blue-vessel.kr",
     "address": {
       "@type": "gs1:PostalAddress",
       "streetAddress": [
-        {
-          "@language": "en-US",
-          "@value": "1 Busan Fishing Port"
-        }
+        { "@language": "en-US", "@value": "1 Busan Fishing Port" }
       ],
       "addressLocality": [
-        {
-          "@language": "en-US",
-          "@value": "Yeongdo-gu"
-        }
+        { "@language": "en-US", "@value": "Yeongdo-gu" }
       ],
       "addressRegion": [
-        {
-          "@language": "en-US",
-          "@value": "Busan"
-        }
+        { "@language": "en-US", "@value": "Busan" }
       ],
       "countryCode": "KR"
     }

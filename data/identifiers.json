@@ -1,54 +1,54 @@
 {
   "events": {
-    "v1_hatching":      "urn:uuid:b749c2ce-f637-46e8-9679-152c2efe4a52",
-    "v2_feed":          "urn:uuid:e84965d8-d9b9-41ff-8fa2-b066717819bd",
-    "v3_harvest":       "urn:uuid:b1e69719-dec6-4c24-b0fd-e2634cc7150a",
-    "v4_shipping":      "urn:uuid:73dd5695-7f35-4e8f-8573-3b2d09151522",
-    "v5_catch":         "urn:uuid:f2a49d51-fc4c-4489-83fd-5289671a7237",
-    "v6_transshipment": "urn:uuid:b1e68919-dec6-4c24-b0fd-e2734cc7150a",
-    "v7_landing":       "urn:uuid:eeb689aa-ae0b-4a01-afba-f2a9ce6cf53a",
-    "v8_shipping":      "urn:uuid:ad6e0695-3882-41dd-9e2f-9e36840fc8e1",
-    "v9_receipt":       "urn:uuid:50568403-d57a-4b64-afec-d8ece3552ac0",
-    "v10_receipt":      "urn:uuid:15c42423-5a6a-4e2e-a0d7-174e2a3dd578",
-    "v11_Commingling":  "urn:uuid:30b1a390-df49-4245-86a8-7d08546a0c9b",
-    "v12_Canning":      "urn:uuid:9d0b0d21-b211-4862-83e3-c387e2225cd2",
-    "v13_Packing":      "urn:uuid:8acaa475-9b5c-4a16-ba90-c91a800253ec",
-    "v14_shipping":     "urn:uuid:71360141-03c3-43ad-a4f1-007421584f2f",
-    "v15_receipt":      "urn:uuid:l2d40c6e0-c053-46ba-b8ae-dd53e1f20d4a",
-    "v16_unpacking":    "urn:uuid:4f144ba8-252a-4177-8a59-0a8f87bf098f"
+    "v1_hatching": "urn:uuid:feec1375-6f36-45e4-be10-c32d460b25df",
+    "v2_feed": "urn:uuid:b5a90e66-931e-45c8-aff7-16522acb548d",
+    "v3_harvest": "urn:uuid:beaa5250-39f9-4a2a-bf2b-5062b57e73c1",
+    "v4_shipping": "urn:uuid:9da2a0ab-8bb7-4a67-9253-9c2e100bb92a",
+    "v5_catch": "urn:uuid:e0b4f520-a1b6-4530-9f8b-83b4ed3774ac",
+    "v6_transshipment": "urn:uuid:0a2db44e-30ea-4e3f-9f37-0b47ae0265ce",
+    "v7_landing": "urn:uuid:014af965-a4cf-46cf-9fdb-521e58611e7b",
+    "v8_shipping": "urn:uuid:1ba64730-b504-45ae-85ca-b520ac74a3f4",
+    "v9_receipt": "urn:uuid:bec23094-fa45-4450-8d66-8318fdccc013",
+    "v10_receipt": "urn:uuid:78adfde6-7629-4b97-b153-631999c2723d",
+    "v11_Commingling": "urn:uuid:861b8d41-3023-47aa-8330-8d1809ac4441",
+    "v12_Canning": "urn:uuid:3eef3da3-2192-4cd7-b253-90cbb5ddc755",
+    "v13_Packing": "urn:uuid:17095674-69c0-40ec-902f-1dd538229918",
+    "v14_shipping": "urn:uuid:15f8a762-96a2-4350-b8ea-2ce6e7b3a71f",
+    "v15_receipt": "urn:uuid:c3e53362-71f1-489d-b5b0-b03487e47432",
+    "v16_unpacking": "urn:uuid:c9f60072-8a04-4baf-98ca-2d65f4376ea4"
   },
   "parties": {
-    "Gukje_Feedmill":            "urn:gdst:example.org:party:8800037.2000002",
-    "haeundae_farm":             "urn:gdst:example.org:party:8800048.2000002",
-    "jagalchi_tidal_processing": "urn:gdst:example.org:party:8800057.2000002",
-    "bluewave_retailer":         "urn:gdst:example.org:party:8800067.2000002",
-    "blue_vessel_operator":      "urn:gdst:example.org:party:8800026.2000002"
+    "Gukje_Feedmill": "urn:gdst:example.org:party:8810037.2000002",
+    "haeundae_farm": "urn:gdst:example.org:party:8810048.2000002",
+    "jagalchi_tidal_processing": "urn:gdst:example.org:party:8810057.2000002",
+    "bluewave_retailer": "urn:gdst:example.org:party:8810067.2000002",
+    "blue_vessel_operator": "urn:gdst:example.org:party:8810026.2000002"
   },
   "locations": {
-    "Gukje_Feedmill":              "urn:gdst:example.org:location:loc:8800037.2000012",
-    "haeundae_farm":               "urn:gdst:example.org:location:loc:8800048.2000012",
-    "jagalchi_tidal_processing":   "urn:gdst:example.org:location:loc:8800057.2000012",
-    "bluewave_retailer":           "urn:gdst:example.org:location:loc:8800067.2000012",
-    "blue_vessel_operator_catcharea": "urn:gdst:example.org:location:loc:8800026.2000012",
-    "blue_vessel_operator_port":   "urn:gdst:example.org:location:loc:8800026.2000022"
+    "Gukje_Feedmill": "urn:gdst:example.org:location:loc:8810037.2000012",
+    "haeundae_farm": "urn:gdst:example.org:location:loc:8810048.2000012",
+    "jagalchi_tidal_processing": "urn:gdst:example.org:location:loc:8810057.2000012",
+    "bluewave_retailer": "urn:gdst:example.org:location:loc:8810067.2000012",
+    "blue_vessel_operator_catcharea": "urn:gdst:example.org:location:loc:8810026.2000012",
+    "blue_vessel_operator_port": "urn:gdst:example.org:location:loc:8810026.2000022"
   },
   "products": {
-    "vegetables":             "urn:gdst:example.org:product:class:88000197.2000002",
-    "soy":                    "urn:gdst:example.org:product:class:8800017.2000002",
-    "Atlantic_Salmon_Fry":    "urn:gdst:example.org:product:class:8800028.2000002",
-    "Atlantic_Salmon":        "urn:gdst:example.org:product:class:8800027.2000002",
-    "Canned_Atlantic_Salmon": "urn:gdst:example.org:product:class:8800027.2000003",
-    "Tuna":                   "urn:gdst:example.org:product:class:8800026.2000001"
+    "vegetables": "urn:gdst:example.org:product:class:88010197.3000002",
+    "soy": "urn:gdst:example.org:product:class:8810017.3000002",
+    "Atlantic_Salmon_Fry": "urn:gdst:example.org:product:class:8810028.3000002",
+    "Atlantic_Salmon": "urn:gdst:example.org:product:class:8810027.3000002",
+    "Canned_Atlantic_Salmon": "urn:gdst:example.org:product:class:8810027.3000003",
+    "Tuna": "urn:gdst:example.org:product:class:8810026.3000001"
   },
   "product_lots": {
-    "salmon_fry_lot01272020":        "urn:gdst:example.org:product:lot:class:8800028.2000002.lot01272020",
-    "feed_vegetables_lot12232019":   "urn:gdst:example.org:product:lot:class:88000197.2000002.lot12232019",
-    "salmon_lot01282020":            "urn:gdst:example.org:product:lot:class:8800027.2000002.lot01282020",
-    "salmon_commingled_lot01282022": "urn:gdst:example.org:product:lot:class:8800027.2000002.lot01282022",
-    "salmon_canned_lot01284044":     "urn:gdst:example.org:product:lot:class:8800027.2000003.lot01284044",
-    "tuna_lot345":                   "urn:gdst:example.org:product:lot:class:8800026.2000001.lot345"
+    "salmon_fry_lot01272020": "urn:gdst:example.org:product:lot:class:8810028.3000002.lot01272020",
+    "feed_vegetables_lot12232019": "urn:gdst:example.org:product:lot:class:88010197.3000002.lot12232019",
+    "salmon_lot01282020": "urn:gdst:example.org:product:lot:class:8810027.3000002.lot01282020",
+    "salmon_commingled_lot01282022": "urn:gdst:example.org:product:lot:class:8810027.3000002.lot01282022",
+    "salmon_canned_lot01284044": "urn:gdst:example.org:product:lot:class:8810027.3000003.lot01284044",
+    "tuna_lot345": "urn:gdst:example.org:product:lot:class:8810026.3000001.lot345"
   },
   "containers": {
-    "container_aqua": "urn:epc:id:sscc:88000269.10000000"
+    "container_aqua": "urn:epc:id:sscc:88100269.30000000"
   }
 }

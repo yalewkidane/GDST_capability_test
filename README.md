@@ -22,9 +22,12 @@ node src/cli.js seed:pre-start         # DL + master-data only (events come late
 node src/cli.js start                  # step 1 — 1 credit
 node src/cli.js pull                   # step 2 — pulls events + master-data + DL from capability
 node src/cli.js seed:events            # AFTER pull, so recordTime lands inside the test window
+node src/cli.js verify:epcis           # wait for async EPCIS ingestion so the capability tool doesn't race us
 node src/cli.js next                   # step 3 — provides our SOLUTION_PROVIDER_GENERATED_EPCS
-node src/cli.js report                 # step 6 — re-run to poll until status=4 (finished)
+node src/cli.js report                 # step 6 — re-run to poll until stage=4 (finished), status=11 (passed)
 ```
+
+To re-test under a different identity (different PGLN, prefixes, solution name), see [Re-running with a different identity](#re-running-with-a-different-identity-new-system).
 
 ---
 
@@ -38,6 +41,7 @@ GDST_capability_test/
 │   │                                (events / parties / locations / products / product_lots / containers)
 │   ├── events.template.json      ← EPCISDocument template; placeholders like {{parties.haeundae_farm}}
 │   ├── master-data.template.json ← JSON-LD array template (gs1:Product / gs1:Organization / gs1:Place)
+│   ├── profile.example.json      ← example profile for `new-system` swap (different identity, same scenario)
 │   ├── events.json               ← optional static fallback (empty by default; template wins)
 │   ├── master-data.json          ← optional static fallback (empty by default; template wins)
 │   └── digital-links.json        ← optional override list (empty by default; entries here override generated)
@@ -47,13 +51,16 @@ GDST_capability_test/
 │   ├── state.js                  ← reads/writes .capability-state.json (UUID, source EPCs, pull stats…)
 │   ├── http.js                   ← axios clients for DL / webvoc / EPCIS / capability service
 │   ├── render.js                 ← Mustache-style {{section.name}} → identifiers.json substitution
-│   ├── build/digital-links.js    ← deterministic DL anchor builder (24 entries from identifiers + .env)
+│   ├── urn.js                    ← URN classifier (sscc→00, sgtin→01, location→414, party→417, etc.)
+│   ├── build/digital-links.js    ← deterministic DL anchor builder (25 entries from identifiers + .env)
 │   ├── seed/digital-links.js     ← POSTs DL anchors (idempotent: 409 → skip)
 │   ├── seed/master-data.js       ← Renders template, POSTs each record (idempotent: 409 → skip)
 │   ├── seed/events.js            ← Renders template, POSTs each event one-by-one (warns if start hasn't run)
 │   ├── clean/digital-links.js    ← DELETEs every generated anchor × linkType (use before clean re-seed)
+│   ├── verify/epcis.js           ← Polls our EPCIS until our seeded events are queryable (bridges async ingestion)
+│   ├── swap/new-system.js        ← Backs up + rewrites identifiers/master-data/.env for a different identity
 │   ├── traceback.js              ← Pure trace-back algo (seen/used/frontier sets, broad EPC extraction)
-│   └── capability/{start,pull,next,report}.js  ← the four live capability-service commands
+│   └── capability/{start,pull,mirror,next,report}.js  ← the live capability-service commands + per-URN mirror helper
 ├── out/                          ← rendered debug artifacts + run outputs (gitignored)
 └── .capability-state.json        ← run state (gitignored)
 ```
@@ -194,11 +201,12 @@ will match.
 ### Offline / debug (no HTTP)
 | Command | Effect |
 |---|---|
-| `render:digital-links` | Build & write `out/digital-links.rendered.json` (24 anchors) |
-| `render:master-data` | Render & write `out/master-data.rendered.json` (16 records) |
+| `render:digital-links` | Build & write `out/digital-links.rendered.json` (25 anchors) |
+| `render:master-data` | Render & write `out/master-data.rendered.json` (17 records) |
 | `render:events` | Render & write `out/events.rendered.json` (16 events) |
+| `new-system <profile>` | Swap identity per the profile JSON. Backs up `.env` / `data/identifiers.json` / `data/master-data.template.json` to `.v1` siblings, then rewrites in place. See "Re-running with a different identity" below. |
 
-### Local seeding (hits your own DL / webvoc / EPCIS, no capability credits)
+### Local seeding + verification (hits your own DL / webvoc / EPCIS, no capability credits)
 | Command | When to run |
 |---|---|
 | `clean:digital-links` | Before a clean re-seed — DELETEs every anchor × linkType from your DL |
@@ -206,6 +214,7 @@ will match.
 | `seed:digital-links` | Pre-start. Idempotent (409 = skip). Includes the literal PGLN anchor for step 4 |
 | `seed:master-data` | Pre-start. Idempotent (409 = skip) |
 | `seed:events` | **After `pull`.** Warns + waits if state has no UUID or `pull` hasn't run |
+| `verify:epcis` | **After `seed:events`, before `next`.** Polls our EPCIS until our seeded events are queryable, so the capability tool doesn't race our async ingestion |
 
 ### Capability service (live test — uses credits)
 | Command | Step | What it does |
@@ -213,7 +222,100 @@ will match.
 | `start`  | 1 | POST `/process/start`; persists UUID + source EPC to `.capability-state.json` |
 | `pull`   | 2 | Recursive trace-back: pulls events + master-data + DL from capability and pushes them to your infrastructure; writes `out/pulled-<UUID>.json` |
 | `next`   | 3 | POST `/process/next` with `SOLUTION_PROVIDER_GENERATED_EPCS` |
-| `report` | 6 | GET `/process/report`; re-run to poll. status `4` = finished; stage `11` = passed |
+| `report` | 6 | GET `/process/report`; re-run to poll. stage `4` = finished; status `11` = passed |
+
+---
+
+## Re-running with a different identity (`new-system`)
+
+After a passing run, you can re-test under a **completely different solution-provider identity** — different `SOLUTION_NAME`, different PGLN, different company prefixes for every party/location/product/lot, new container SSCC, fresh event UUIDs — without touching the event sequence or any source code. The salmon+tuna scenario stays the same; only identifiers move.
+
+### How it works
+
+1. You fill a small profile JSON describing the new identity (start from [data/profile.example.json](data/profile.example.json)).
+2. Run `node src/cli.js new-system <profile.json>`. It:
+   - Backs up `.env`, `data/identifiers.json`, `data/master-data.template.json` to `*.v1` siblings (only if the sibling doesn't already exist — never overwrites).
+   - Rewrites the three files in place, substituting URN prefixes per the maps in the profile.
+   - Optionally regenerates all 16 event UUIDs and/or renames master-data display names.
+3. Run the normal pipeline (`seed:pre-start` → `start` → `pull` → …). Everything downstream picks up the new identity automatically because the events template uses `{{section.name}}` placeholders.
+
+### Profile shape
+
+```json
+{
+  "solution": {
+    "name":    "newpass ver.1.0",
+    "version": "1.0",
+    "pgln":    "8810027900078"
+  },
+  "party_prefix_map": {
+    "8800037": "8810037",
+    "8800048": "8810048",
+    "8800057": "8810057",
+    "8800067": "8810067",
+    "8800026": "8810026"
+  },
+  "product_class_map": {
+    "88000197.2000002": "88010197.3000002",
+    "8800017.2000002":  "8810017.3000002",
+    "8800028.2000002":  "8810028.3000002",
+    "8800027.2000002":  "8810027.3000002",
+    "8800027.2000003":  "8810027.3000003",
+    "8800026.2000001":  "8810026.3000001"
+  },
+  "container_sscc": "urn:epc:id:sscc:88100269.20000000",
+  "options": {
+    "regenerate_event_uuids": true,
+    "rename_master_data":     false
+  }
+}
+```
+
+- `party_prefix_map` — rewrites both `parties.*` and `locations.*` URNs (they share the company prefix in this scheme).
+- `product_class_map` — rewrites `products.*` and the class portion of `product_lots.*`. Use the full `{compcode}.{itemref}` segment as the key to disambiguate (e.g. `8800027.2000002` vs `8800027.2000003`).
+- `options.regenerate_event_uuids` — `true` (recommended) replaces all 16 `events.v*` UUIDs via `crypto.randomUUID()`.
+- `options.rename_master_data` — `false` (default) keeps display names; `true` prefixes every organization/place/product name with `"New "`.
+
+### Full re-test workflow
+
+```sh
+# 1. Edit profile (or just use the example as-is)
+cp data/profile.example.json data/profile.json
+$EDITOR data/profile.json
+
+# 2. Swap identity (no HTTP)
+node src/cli.js new-system data/profile.json
+
+# 3. Verify offline
+node src/cli.js render:digital-links   # new prefixes everywhere
+node src/cli.js render:master-data     # new GLNs/GTINs
+node src/cli.js render:events          # new event UUIDs and entity URNs
+
+# 4. Wipe DL + EPCIS + webvoc DBs manually (same as a first-time run)
+
+# 5. Run the live test
+node src/cli.js seed:pre-start
+node src/cli.js start
+node src/cli.js pull
+node src/cli.js seed:events
+node src/cli.js verify:epcis
+node src/cli.js next
+node src/cli.js report
+```
+
+### Restoring the original (v1) identity
+
+```sh
+cp data/identifiers.json.v1            data/identifiers.json
+cp data/master-data.template.json.v1   data/master-data.template.json
+cp .env.v1                              .env
+```
+
+The pipeline picks up the v1 data immediately — no code change needed.
+
+### Out of scope
+
+`new-system` only swaps **identifiers and display names**. Changing the underlying GDST scenario (different species, biz-step sequence, vessel attributes, certifications) requires manual edits to [data/events.template.json](data/events.template.json) and the corresponding master-data records.
 
 ---
 
