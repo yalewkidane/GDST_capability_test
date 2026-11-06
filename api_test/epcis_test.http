@@ -45,3 +45,71 @@ X-API-Key: {{epcis_apiKey}}
     ]
   }
 }
+
+
+### Checking missing events 
+### 3  farmHarvest — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:b1e69719-dec6-4c24-b0fd-e2634cc7150a","urn:uuid:658f14b3-8195-4c5f-a5e2-82e32e4b4338"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 4  shipping (farmed lot) — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:73dd5695-7f35-4e8f-8573-3b2d09151522","urn:uuid:519c9932-b3e1-4608-bad8-f7cc296ac65a"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 5  fishingEvent — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:f2a49d51-fc4c-4489-83fd-5289671a7237","urn:uuid:beacccf0-0c88-4638-b8b5-63dafcb4f862"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 7  landing — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:eeb689aa-ae0b-4a01-afba-f2a9ce6cf53a","urn:uuid:e6d1fb33-8db5-40bc-8396-b2ffce8ae5f2"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 8  shipping (wild lot) — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:ad6e0695-3882-41dd-9e2f-9e36840fc8e1","urn:uuid:70274852-f7db-4a94-907b-646757d5ce93"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 9  receiving (wild lot) — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:50568403-d57a-4b64-afec-d8ece3552ac0","urn:uuid:feba2074-0cdc-4e24-8787-d887717d1022"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 10 receiving (farmed lot) — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:15c42423-5a6a-4e2e-a0d7-174e2a3dd578","urn:uuid:fc472530-274e-413d-92d3-ee2b527ebe91"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 12 commissioning / canning — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:9d0b0d21-b211-4862-83e3-c387e2225cd2","urn:uuid:78aaedee-2150-4945-b209-551f66677724"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 14 shipping (SSCC) — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:71360141-03c3-43ad-a4f1-007421584f2f","urn:uuid:a504acb0-dff1-4082-97bc-fd6c46fd4193"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+### 15 receiving (SSCC) — mine + reference
+GET {{epcis_server_url}}:{{epcis_server_port}}/epcis/v2/events?EQ_eventID=["urn:uuid:l2d40c6e0-c053-46ba-b8ae-dd53e1f20d4a","urn:uuid:d23b0ab0-c36d-4b6e-97e8-a4ecc624308f"]
+Accept: application/json
+X-API-Key: {{epcis_apiKey}}
+
+
+
+#Missing fields per event
+#	Event (template line)	Missing compared with the tool's event
+#3	v3_harvest	cbvmda:lotNumber inside ilmd
+#4	v4_shipping	disposition, gdst:humanWelfarePolicy, 4 harvestCoC certificate fields
+#5	v5_catch	cbvmda:lotNumber inside ilmd
+#7	v7_landing	disposition, readPoint
+#8	v8_shipping	disposition, gdst:humanWelfarePolicy, 4 harvestCoC certificate fields
+#9	v9_receipt	disposition, gdst:humanWelfarePolicy, 4 harvestCoC certificate fields
+#10	v10_receipt	disposition, gdst:humanWelfarePolicy, 4 harvestCoC certificate fields
+#12	v12_Canning	transformationID
+#14	v14_shipping	disposition
+#15	v15_receipt	disposition
+#Nothing is missing in #1 hatching, #2 feed, #6 transshipment, #11 commingling, #13 packing and #16 unpacking.

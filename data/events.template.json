@@ -20,7 +20,7 @@
         "eventID": "{{events.v1_hatching}}",
         "epcList": [],
         "action": "ADD",
-        "bizStep": "urn:gdst:bizstep:hatching",
+        "bizStep": "urn:gdst:bizStep:hatching",
         "disposition": "active",
         "bizLocation": { "id": "{{locations.haeundae_farm}}" },
         "quantityList": [
@@ -92,6 +92,7 @@
         "ilmd": {
           "gdst:aquacultureMethod": "Cage and Pen",
           "cbvmda:productionMethodForFishAndSeafoodCode": "AQUACULTURE",
+          "cbvmda:lotNumber": "lot01282020",
           "cbvmda:certificationList": {
             "certification": [
               { "gdst:certificationType": "urn:gdst:certType:harvestCert", "certificationAgency": "Farm Certificate Authority", "certificationStandard": "Farm Certificate Standard", "certificationValue": "SIMP.LPCO.2", "certificationIdentification": "10161781" },
@@ -112,6 +113,7 @@
         "epcList": [],
         "action": "OBSERVE",
         "bizStep": "shipping",
+        "disposition": "active",
         "bizLocation": { "id": "{{locations.haeundae_farm}}" },
         "quantityList": [
           { "epcClass": "{{product_lots.salmon_lot01282020}}", "quantity": 1000.0, "uom": "KGM" }
@@ -125,9 +127,14 @@
           { "type": "location", "destination": "{{locations.jagalchi_tidal_processing}}" }
         ],
         "gdst:productOwner": "{{parties.haeundae_farm}}",
+        "gdst:humanWelfarePolicy": "3P Audit",
         "cbvmda:certificationList": {
           "certification": [
-            { "gdst:certificationType": "urn:gdst:certtype:harvestcoc" }
+            { "gdst:certificationType": "urn:gdst:certType:harvestCoC",
+          "certificationAgency": "test",
+                  "certificationStandard": "test",
+                  "certificationValue": "test",
+                  "certificationIdentification": "test" }
           ]
         },
         "cbvmda:informationProvider": "{{parties.haeundae_farm}}"
@@ -139,7 +146,7 @@
         "eventID": "{{events.v5_catch}}",
         "epcList": [],
         "action": "ADD",
-        "bizStep": "urn:gdst:bizstep:fishingEvent",
+        "bizStep": "urn:gdst:bizStep:fishingEvent",
         "disposition": "active",
         "bizLocation": { "id": "{{locations.blue_vessel_operator_catcharea}}" },
         "quantityList": [
@@ -167,6 +174,7 @@
             ]
           },
           "cbvmda:productionMethodForFishAndSeafoodCode": "MARINE_FISHERY",
+          "cbvmda:lotNumber": "lot345",
           "cbvmda:certificationList": {
             "certification": [
               { "gdst:certificationType": "urn:gdst:certType:harvestCert", "certificationAgency": "Korea Catch Certificate Authority", "certificationStandard": "Korea Catch Certificate Standard", "certificationValue": "KRPUS.LPCO.2", "certificationIdentification": "10161781" },
@@ -212,7 +220,9 @@
         "eventID": "{{events.v7_landing}}",
         "epcList": [],
         "action": "OBSERVE",
-        "bizStep": "urn:gdst:bizstep:landing",
+        "bizStep": "urn:gdst:bizStep:landing",
+        "disposition": "active",
+        "readPoint": {"id": "geo:35.3232,129.232" },
         "bizLocation": { "id": "{{locations.blue_vessel_operator_port}}" },
         "quantityList": [
           { "epcClass": "{{product_lots.tuna_lot345}}", "quantity": 500.0, "uom": "KGM" }
@@ -236,6 +246,7 @@
         "epcList": [],
         "action": "OBSERVE",
         "bizStep": "shipping",
+        "disposition": "active",
         "bizLocation": { "id": "{{locations.blue_vessel_operator_port}}" },
         "quantityList": [
           { "epcClass": "{{product_lots.tuna_lot345}}", "quantity": 500.0, "uom": "KGM" }
@@ -249,10 +260,15 @@
           { "type": "location", "destination": "{{locations.jagalchi_tidal_processing}}" }
         ],
         "gdst:productOwner": "{{parties.blue_vessel_operator}}",
+        "gdst:humanWelfarePolicy": "3P Audit",
         "cbvmda:certificationList": {
           "certification": [
-            { "gdst:certificationType": "urn:gdst:certtype:humanPolicy" },
-            { "gdst:certificationType": "urn:gdst:certtype:harvestcoc" }
+            { "gdst:certificationType": "urn:gdst:certType:humanPolicy","certificationAgency": "test", "certificationStandard": "test", "certificationValue": "test", "certificationIdentification": "test" },
+            { "gdst:certificationType": "urn:gdst:certType:harvestCoC",
+          "certificationAgency": "test",
+                  "certificationStandard": "test",
+                  "certificationValue": "test",
+                  "certificationIdentification": "test" }
           ]
         },
         "cbvmda:informationProvider": "{{parties.blue_vessel_operator}}"
@@ -265,6 +281,7 @@
         "epcList": [],
         "action": "OBSERVE",
         "bizStep": "receiving",
+        "disposition": "active",
         "bizLocation": { "id": "{{locations.jagalchi_tidal_processing}}" },
         "quantityList": [
           { "epcClass": "{{product_lots.tuna_lot345}}", "quantity": 500.0, "uom": "KGM" }
@@ -278,10 +295,15 @@
           { "type": "location", "destination": "{{locations.jagalchi_tidal_processing}}" }
         ],
         "gdst:productOwner": "{{parties.jagalchi_tidal_processing}}",
+        "gdst:humanWelfarePolicy": "3P Audit",
         "cbvmda:certificationList": {
           "certification": [
-            { "gdst:certificationType": "urn:gdst:certtype:humanPolicy" },
-            { "gdst:certificationType": "urn:gdst:certtype:harvestcoc" }
+            { "gdst:certificationType": "urn:gdst:certType:humanPolicy","certificationAgency": "test", "certificationStandard": "test", "certificationValue": "test", "certificationIdentification": "test" },
+            { "gdst:certificationType": "urn:gdst:certType:harvestCoC",
+          "certificationAgency": "test",
+                  "certificationStandard": "test",
+                  "certificationValue": "test",
+                  "certificationIdentification": "test" }
           ]
         },
         "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}"
@@ -294,6 +316,7 @@
         "epcList": [],
         "action": "OBSERVE",
         "bizStep": "receiving",
+        "disposition": "active",
         "bizLocation": { "id": "{{locations.jagalchi_tidal_processing}}" },
         "quantityList": [
           { "epcClass": "{{product_lots.salmon_lot01282020}}", "quantity": 1000.0, "uom": "KGM" }
@@ -307,9 +330,19 @@
           { "type": "location", "destination": "{{locations.jagalchi_tidal_processing}}" }
         ],
         "gdst:productOwner": "{{parties.haeundae_farm}}",
+        "gdst:humanWelfarePolicy": "3P Audit",
         "cbvmda:certificationList": {
           "certification": [
-            { "gdst:certificationType": "urn:gdst:certtype:harvestcoc" }
+            { "gdst:certificationType": "urn:gdst:certType:humanPolicy",
+          "certificationAgency": "test",
+                  "certificationStandard": "test",
+                  "certificationValue": "test",
+                  "certificationIdentification": "test"  },
+            { "gdst:certificationType": "urn:gdst:certType:harvestCoC",
+           "certificationAgency": "test",
+                  "certificationStandard": "test",
+                  "certificationValue": "test",
+                  "certificationIdentification": "test" }
           ]
         },
         "cbvmda:informationProvider": "{{parties.jagalchi_tidal_processing}}"
@@ -347,6 +380,7 @@
         "outputQuantityList": [
           { "epcClass": "{{product_lots.salmon_canned_lot01284044}}", "quantity": 1000.0, "uom": "KGM" }
         ],
+        "transformationID": "transform-11-05-2026-11:20",
         "bizStep": "commissioning",
         "disposition": "active",
         "bizLocation": { "id": "{{locations.jagalchi_tidal_processing}}" },
@@ -400,6 +434,7 @@
         "epcList": ["{{containers.container_aqua}}"],
         "action": "OBSERVE",
         "bizStep": "shipping",
+        "disposition": "active",
         "bizLocation": { "id": "{{locations.jagalchi_tidal_processing}}" },
         "sourceList": [
           { "type": "owning_party", "source": "{{parties.jagalchi_tidal_processing}}" },
@@ -426,6 +461,7 @@
         "epcList": ["{{containers.container_aqua}}"],
         "action": "OBSERVE",
         "bizStep": "receiving",
+        "disposition": "active",
         "bizLocation": { "id": "{{locations.bluewave_retailer}}" },
         "sourceList": [
           { "type": "owning_party", "source": "{{parties.jagalchi_tidal_processing}}" },
